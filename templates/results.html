@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Results</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .correct {
+            color: green;
+        }
+        .incorrect {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h2>Your Results</h2>
+    {% for r in results %}
+        <div>
+            <p><b>Q{{ r.question_num }}:</b> You selected: <i>{{ r.selected }}</i></p>
+            {% if r.is_correct %}
+                <p class="correct">✅ Correct!</p>
+            {% else %}
+                <p class="incorrect">❌ Incorrect. Correct Answer: <b>{{ r.correct }}</b></p>
+            {% endif %}
+        </div>
+        <hr>
+    {% endfor %}
+</body>
+</html>

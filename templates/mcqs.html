@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Answer the Questions</title>
+</head>
+<body>
+    <h2>Answer the MCQs</h2>
+    <form method="POST" action="/submit">
+        {% for i, q in enumerate(questions) %}
+            <p><b>Q{{ i+1 }}:</b> {{ q.question }}</p>
+            {% for option in q.options %}
+                <input type="radio" name="q{{i}}" value="{{ option }}" required> {{ option }}<br>
+            {% endfor %}
+            <input type="hidden" name="answer{{i}}" value="{{ q.answer }}">
+            <hr>
+        {% endfor %}
+        <input type="hidden" name="total" value="{{ questions|length }}">
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
