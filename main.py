@@ -15,6 +15,7 @@ app = Flask(__name__)
 nltk.download("punkt")
 nltk.download('punkt_tab')
 nltk.download("averaged_perceptron_tagger")
+nltk.download('averaged_perceptron_tagger_eng')
 nltk.download("wordnet")    # to find synonyms/distractors.
 
 # Load SpaCy model
