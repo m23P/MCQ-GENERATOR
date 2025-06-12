@@ -13,6 +13,7 @@ app = Flask(__name__)
 
 # Download NLTK resources
 nltk.download("punkt")
+nltk.download('punkt_tab')
 nltk.download("averaged_perceptron_tagger")
 nltk.download("wordnet")    # to find synonyms/distractors.
 
